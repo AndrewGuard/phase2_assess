@@ -9,5 +9,8 @@ class CreateEventAttendances < ActiveRecord::Migration
 
     add_index :event_attendances, [:user_id, :event_id], :unique => true
     add_index :event_attendances, :event_id
+
+    rename_column :users, :user_id, :attendee_id
+    rename_column :users, :user_id, :creator_id
   end
 end

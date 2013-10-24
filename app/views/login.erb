@@ -1,19 +1,59 @@
 <div class="login">
-  <h1>Sign in below, if you wish</h1>
+  <h1>Sign in for Existing Users</h1>
   <form action="/validate_user" method="post">
     <table>
       <tr>
-        <td><label for="user"> First Name </label></td>
-        <td><input type="text" name="first_name"/></td>
-      </tr>
-      <tr>
-        <td><label for="user"> Last Name </label></td>
-        <td><input type="text" name="last_name"/></td>
+        <td><label for="user"> Email Address </label></td>
+        <td><input type="text" name="email"/></td>
       </tr>
       <tr>
         <td><label for="password"> Password </label></td>
         <td><input type="password" name="password"/></td>
       </tr>
+      <tr>
+        <td><br><input type="submit" value="Login User"><br></td>
+      </tr>
     </table>
   </form>
 </div>
+
+<div class="create_user">
+  <h1>Create an Account</h1>
+  <form action="/create_user" method="post">
+    <table>
+      <tr>
+        <td><label for="first_name"> First Name </label></td>
+        <td><input type="text" name="post[first_name]"/></td>
+      </tr>
+      <tr>
+        <td><label for="last_name"> Last Name </label></td>
+        <td><input type="text" name="post[last_name]"/></td>
+      </tr>
+      <tr>
+        <td><label for="new_user"> Email Address </label></td>
+        <td><input type="text" name="post[email]"/></td>
+      </tr>
+      <tr>
+        <td><label for="new_user"> Birthdate </label></td>
+        <td><input type="integer" name="post[birthdate]"/></td>
+      </tr>
+      <tr>
+        <td><label for="password"> Password </label></td>
+        <td><input type="password" name="post[password]"/></td>
+      </tr>
+       <tr>
+        <td><label for="password"> Confirm Password </label></td>
+        <td><input type="password" name="post[confirm_password]"/></td>
+      </tr>
+
+       <tr>
+        <td><br><input type="submit" value="Create User"><br></td>
+      </tr>
+    </table>
+  </form>
+  <br><br>
+  <a href="/"> Home Page </a>
+  <br><br>
+  <a href="/logout"> Logout </a>
+</div>
+
