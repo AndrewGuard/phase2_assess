@@ -1,4 +1,5 @@
 require 'faker'
+# require 'bcrypt'
 
 User.delete_all
 Event.delete_all
