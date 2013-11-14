@@ -2,6 +2,10 @@ get '/' do
   erb :index
 end
 
+get '/things' do
+
+end
+
 get '/login' do
   erb :login
 end
