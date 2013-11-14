@@ -17,7 +17,7 @@ end
   start_time = Time.now + (rand(61) - 30).days
   end_time   = start_time + (1 + rand(6)).hours
 
-  Event.create :user_id    => users[rand(users.length)].id,
+  Event.create :creator_id    => users[rand(users.length)].id,
                :name       => Faker::Company.name,
                :location   => "#{Faker::Address.city}, #{Faker::Address.state_abbr}",
                :starts_at => start_time,

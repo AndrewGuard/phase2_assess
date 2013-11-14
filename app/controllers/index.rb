@@ -14,7 +14,6 @@ end
 
 get '/user/:user_id' do
   @current_user = User.find(session[:user_id])
-  @events = @current_user.events
   erb :user_page
 end
 
@@ -50,8 +49,14 @@ post '/create_user' do
     redirect "/user/#{user.id}"
   else
     @error = "Fail"
-    erb :index
+    redirect '/'
   end
+end
+
+post '/create_event' do
+  current_user = User.find(session[:user_id])
+  event = Event.create(creator_id: current_user.id, name: params[:name], location: params[:location], starts_at: params[:starts_at], ends_at: params[:ends_at])
+  redirect "/user/#{current_user.id}"
 end
 
 

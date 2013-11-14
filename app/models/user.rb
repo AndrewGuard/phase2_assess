@@ -11,9 +11,9 @@ class User < ActiveRecord::Base
 
   validates :email, :uniqueness => true, :format => /.+@.+\..+/
 
-  has_many :events
-  has_many :created_events, through: :events
-  has_many :attended_events, through: :events
+  has_many :created_events, class_name: "Event", foreign_key: "creator_id"
+  has_many :event_attendances
+  has_many :attended_events, through: :event_attendances, source: :event
 
   def self.authenticate(email, password)
     user = User.find_by_email(email)
