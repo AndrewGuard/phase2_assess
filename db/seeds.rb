@@ -4,19 +4,13 @@ require 'bcrypt'
 User.delete_all
 Event.delete_all
 
-# User.create :first_name => 'Andrew',
-#               :last_name  => 'Guard',
-#               :email      => 'andrew.s.guard@gmail.com',
-#               :birthdate  => '08271986'
-
 # Create 500 users
-users = 500.times.map do
+users = 10.times.map do
   User.create :first_name => Faker::Name.first_name,
               :last_name  => Faker::Name.last_name,
               :email      => Faker::Internet.email,
               :birthdate  => Date.today - 15.years - rand(20000).days,
-              :password   => "password",
-              :password_confirmation => "password"
+              :password   => "password"
 end
 
 100.times do

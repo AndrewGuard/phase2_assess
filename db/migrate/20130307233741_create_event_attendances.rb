@@ -7,10 +7,10 @@ class CreateEventAttendances < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :event_attendances, [:user_id, :event_id], :unique => true
-    add_index :event_attendances, :event_id
+    # add_index :event_attendances, [:user_id, :event_id], :unique => true
+    # add_index :event_attendances, :event_id
 
-    rename_column :users, :user_id, :attendee_id
-    rename_column :users, :user_id, :creator_id
+    # rename_column :users, :user_id, :attendee_id
+    # rename_column :users, :user_id, :creator_id
   end
 end
