@@ -2,10 +2,6 @@ get '/' do
   erb :index
 end
 
-get '/things' do
-
-end
-
 get '/login' do
   erb :login
 end
@@ -37,8 +33,6 @@ post '/create_user' do
     redirect to '/'
   end
 end
-
-# (first_name: params[:first_name], last_name: params[:last_name], email: params[:email], birthdate: params[:birthdate], password_digest: params[:password_digest])
 
 
 
